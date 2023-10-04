@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    background-color: rgba(34, 34, 37, 0.91);
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: calc(100vw - 30px);
+    max-width: 1200px;
+    min-height: calc(100vh - 50px);
+    margin: 25px 0;
+    background-color: #3f3d3d;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 025);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/*-----------------------HEADER-----------------------*/
+.header {
+    display: flex;
+    padding: 25px 10px 10px;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 16px 0 0;
+    width: 50px;
+    height: 50px;
+}
+
+.name {
+    font-size: 25px;
+    color: #cccccc;
+}
+
+.search-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.searchByYear {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #cccccc;
+    padding: 3px;
+}
+
+.searchByName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #cccccc;
+    padding: 3px;
+}
+
+.search {
+    width: 200px;
+    height: 30px;
+    border: none;
+    margin: 3px;
+    border-bottom: 1px solid #ccc;
+    background-color: #4f4f4f;
+    outline: none;
+    font-family: inherit;
+}
+
+.find {
+    background-color: #4f4f4f;
+    display: flex;
+}
+
+.find:hover {
+    background: rgb(241, 169, 69);
+}
+
+/*------------------------film-carousel---------------------------*/
+.film-carousel {
+    background: rgb(241, 169, 69);
+    height: 150px;
+    width: 95%;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 2.5%;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.carousel-content {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 11px;
+}
+
+.film-image {
+    height: 135px;
+    border: 4px solid #4f4f4f;
+
+}
+
+/*-----------------------MAIN CONTENT-----------------------*/
+
+.moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 20px 20px;
+
+
+}
+
+.film-card {
+    width: calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 6px;
+    margin: 0 10px 20px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s;
+}
+
+
+.film-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.film-card img {
+    border-radius: 6px;
+}
+
+.film-card:hover {
+    color: #B8860B;
+    box-shadow: 1px 1px 25px rgba(184, 134, 11);
+}
+
+.film-data {
+    position: absolute;
+    bottom: 0;
+    padding: 25px 15px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.film-data_rating {
+    width: 40px;
+    height: 25px;
+    background: rgb(241, 169, 69);
+    position: absolute;
+    left: -8px;
+    top: -10px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-data_people {
+    font-size: 16px;
+    color: #cccccc;
+    position: absolute;
+    top: 0;
+    left: 35px;
+}
+
+.film-data_name {
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 10px #000;
+    display: block;
+    text-align: center;
+}
+
+
+/*-----------------------PAGINATION-----------------------*/
+
+.pagination {
+    display: flex;
+    margin-bottom: 17px;
+    justify-content: center;
+    text-shadow: 0 0 10px #000;
+
+}
+
+.pagination span {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    margin: 1px;
+    border-radius: 5px;
+
+}
+
+.pagination span.active {
+    background-color: #4f4f4f;
+    color: #cccccc;
+
+}
+
+.pagination span:hover {
+    background: rgb(241, 169, 69);
+    color: black;
+}
+
+@media (max-width: 1020px) {
+    .film-card {
+        width: calc(33.333333333333% - 20px);
+    }
+
+}
+
+@media (max-width: 680px) {
+    .film-card {
+        width: calc(50% - 20px);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container {
+        margin-left: 35px;
+    }
+
+    .search {
+        width: calc(100% - 10px);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 530px) {
+    .film-card {
+        width: calc(100% - 20px);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container {
+        margin-left: 10px;
+    }
+
+    .search {
+        width: calc(100% - 20px);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-image {
+        margin-top: 20px;
+    }
+}
+
+.noResult {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+/*-----------------------MODAL WINDOW-----------------------*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    color: #cccccc;
+}
+
+.modal-content {
+    display: flex;
+    border-radius: 5px;
+    background-color: #3f3d3d;
+    max-width: 70%;
+    max-height: 68%;
+    overflow: auto;
+    text-align: center;
+}
+
+.line {
+
+    right: 28px;
+    width: 25px;
+    background: rgb(241, 169, 69);
+    font-size: 24px;
+    cursor: pointer;
+    align-items: end;
+    color: black;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    top: 8px;
+    right: 8px;
+    width: 25px;
+    background: rgb(241, 169, 69);
+    font-size: 24px;
+    color: black;
+}
+
+
+.modal-image {
+    width: 30%;
+    height: 95%;
+    padding: 1%;
+
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+.modal-title {
+    font-size: 30px;
+    margin: 0;
+    text-align: left;
+
+}
+
+.modal-year {
+    font-size: 18px;
+    margin-top: 5px;
+
+}
+
+.modal-description {
+    margin-top: 8px;
+
+}
+
+.description {
+    background: rgb(241, 169, 69);
+    padding: 1%;
+    color: black;
+    text-align: left;
+}
+
+hr {
+    border-color: #f1a945;
+    background-color: #f1a945;
+    height: 2px;
+    margin: 10px 0;
+}
+
+
+
